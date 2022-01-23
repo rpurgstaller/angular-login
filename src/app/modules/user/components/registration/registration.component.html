@@ -1,0 +1,101 @@
+<div class="main-wrapper" fxLayout="row" fxLayoutAlign="center center">
+  <mat-card class="mat-elevation-z0">
+    <mat-card-header>
+      <mat-card-title>Register</mat-card-title>
+    </mat-card-header>
+
+    <form class="example-form" [formGroup]="registrationForm" (submit)="submit()">
+      <mat-card-content>
+        <mat-form-field class="example-full-width">
+          <input matInput class="form-control" id="username" name="username" placeholder="Username"
+                 formControlName="username">
+          <mat-error *ngIf="username.touched && username.invalid && username.errors?.required">
+            <span>
+              Username is required.
+            </span>
+          </mat-error>
+        </mat-form-field>
+
+
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Email" formControlName="email"
+                 formControlName="email">
+          <mat-error *ngIf="email.touched && email.invalid && email.errors?.required">
+            <span>
+              E-mail address is required.
+            </span>
+          </mat-error>
+          <mat-error *ngIf="email.touched && email.invalid && email.errors?.email">
+            <span>
+              E-mail address is not valid.
+            </span>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <input [type]="hidePassword? 'password' : 'text'" formControlName="password" matInput placeholder="Chose a password"
+                 formControlName="password">
+          <mat-icon matSuffix (click)="hidePassword = !hidePassword">{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+          <mat-error *ngIf="password.touched && password.invalid && password.errors?.required">
+            Password is required.
+          </mat-error>
+          <mat-error *ngIf="password.touched && password.invalid && password.errors?.invalidCharacter">
+            Password contains invalid character.
+          </mat-error>
+        </mat-form-field>
+
+        <!-- password pattern validation -->
+        <label class="col small" [ngClass]="isPasswordPatternInvalid('minlength') ? 'text-danger' : 'text-success'">
+          <i class="material-icons">
+            {{isPasswordPatternInvalid('minlength') ? 'cancel' : 'check_circle'}}
+          </i>
+          Must be at least 8 characters.
+        </label>
+        <label class="col small" [ngClass]="isPasswordPatternInvalid('hasNoNumber')? 'text-danger' : 'text-success'">
+          <i class="material-icons">
+            {{isPasswordPatternInvalid('hasNoNumber') ? 'cancel' : 'check_circle'}}
+          </i>
+          Must contain at least 1 number.
+        </label>
+        <label class="col small" [ngClass]="isPasswordPatternInvalid('hasNoCapitalCase')? 'text-danger' : 'text-success'">
+          <i class="material-icons">
+            {{isPasswordPatternInvalid('hasNoCapitalCase') ? 'cancel' : 'check_circle'}}
+          </i>
+          Must contain at least 1 in capital case.
+        </label>
+        <label class="col small" [ngClass]="isPasswordPatternInvalid('hasNoLowerCase')? 'text-danger' : 'text-success'">
+          <i class="material-icons">
+            {{isPasswordPatternInvalid('hasNoLowerCase') ? 'cancel' : 'check_circle'}}
+          </i>
+          Must contain at least 1 in lower case.
+        </label>
+        <label class="col small" [ngClass]="isPasswordPatternInvalid('hasNoSpecialCharacter')? 'text-danger' : 'text-success'">
+          <i class="material-icons">
+            {{isPasswordPatternInvalid('hasNoSpecialCharacter') ? 'cancel' : 'check_circle'}}
+          </i>
+          Must contain at least one of the following characters: @#$%^&*()_+!
+        </label>
+
+        <mat-form-field class="example-full-width">
+          <input [type]="hidePasswordConfirmed ? 'password' : 'text'" formControlName="passwordConfirmed" matInput placeholder="Confirm password"
+                 formControlName="passwordConfirmed">
+          <mat-icon matSuffix (click)="hidePasswordConfirmed = !hidePasswordConfirmed">{{hidePasswordConfirmed ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </mat-form-field>
+
+        <mat-error *ngIf="registrationForm.errors?.passwordsDoNotMatch">
+            <span class="small">
+              Passwords do not match.
+            </span>
+        </mat-error>
+
+        <div><span>By signing up, you confirm that you've read and accepted our Terms of Service and Privacy Policy.</span></div>
+      </mat-card-content>
+
+      <button mat-stroked-button color="accent" class="btn-block" type="submit"
+              [disabled]="registrationForm.invalid" (click)="submit()">
+        Register
+      </button>
+
+    </form>
+  </mat-card>
+</div>

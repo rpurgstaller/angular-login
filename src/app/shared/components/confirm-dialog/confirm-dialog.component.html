@@ -1,0 +1,12 @@
+<hi mat-dialog-title>
+  {{title}}
+</hi>
+
+<div mat-dialog-content>
+  <p>{{message}}</p>
+</div>
+
+<div mat-dialog-actions>
+  <button mat-button (click)="dialogRef.close(true)">Confirm</button>
+  <button mat-button (click)="dialogRef.close()">Cancel</button>
+</div>

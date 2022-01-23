@@ -1,0 +1,42 @@
+<div class="main-wrapper" fxLayout="row" fxLayoutAlign="center center">
+  <mat-card class="mat-elevation-z0">
+    <mat-card-header>
+      <mat-card-title>Profile</mat-card-title>
+    </mat-card-header>
+
+    <form class="example-form" [formGroup]="profileForm" (submit)="submit()">
+      <mat-card-content>
+        <mat-form-field class="example-full-width">
+          <input matInput class="form-control" id="username" name="username" placeholder="Username"
+                 formControlName="username">
+          <mat-error *ngIf="username.touched && username.invalid && username.errors?.required">
+            <span>
+              Username is required.
+            </span>
+          </mat-error>
+        </mat-form-field>
+
+
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Email" formControlName="email"
+                 formControlName="email">
+          <mat-error *ngIf="email.touched && email.invalid && email.errors?.required">
+            <span>
+              E-mail address is required.
+            </span>
+          </mat-error>
+          <mat-error *ngIf="email.touched && email.invalid && email.errors?.email">
+            <span>
+              E-mail address is not valid.
+            </span>
+          </mat-error>
+        </mat-form-field>
+      </mat-card-content>
+
+      <div mat-dialog-actions>
+        <button mat-button (click)="submit()">Update</button>
+        <button mat-button (click)="cancel()">Cancel</button>
+      </div>
+    </form>
+  </mat-card>
+</div>

@@ -1,6 +1,16 @@
-# MedusaFrontend
+# Angular Login and Signup Page
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.4.
+
+Features:
+
+- login
+- registration
+- Form validation on registration submit
+- Admin user panel
+- RESTful-API to get/update/delete/create users. 
+
+Feel free to copy and reuse anything in this repository.
 
 ## Development server
 

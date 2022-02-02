@@ -16,8 +16,6 @@ I also built a [Flask-RESTPlus Web Service](https://github.com/rpurgstaller/Flas
 ## Screenshots
 
 | <img src="https://github.com/rpurgstaller/angular-login-and-signup/blob/master/screenshots/angular-frontend-registration.png" width=300> |
-
-| ![registration-form](screenshots/angular-frontend-registration.png | width=100) |
 |:--:|
 | <b>Registration form</b>|
 

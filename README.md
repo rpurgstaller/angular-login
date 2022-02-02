@@ -4,13 +4,30 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Features:
 
-- login
-- registration
+- User registration
 - Form validation on registration submit
 - Admin user panel
 - RESTful-API to get/update/delete/create users. 
 
 Feel free to copy and reuse anything in this repository.
+
+I also built a [Flask-RESTPlus Web Service](https://github.com/rpurgstaller/Flask-RESTPlus-neo4j-backend) for this project. 
+
+## Screenshots
+
+<img src="https://github.com/rpurgstaller/angular-login-and-signup/blob/master/screenshots/angular-frontend-registration.png" width=300>
+
+| ![registration-form](screenshots/angular-frontend-registration.png | width=100) |
+|:--:|
+| <b>Registration form</b>|
+
+| ![registration-form](https://github.com/rpurgstaller/angular-login-and-signup/blob/master/screenshots/angular-frontend-user-list.png) |
+|:--:|
+| <b>User List</b>|
+
+| ![registration-form](https://github.com/rpurgstaller/angular-login-and-signup/blob/master/screenshots/angular-frontend-user-list-filter.png) |
+|:--:|
+| <b>User List with Filter</b>|
 
 ## Development server
 
@@ -35,3 +52,4 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
